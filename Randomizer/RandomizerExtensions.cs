@@ -2,7 +2,7 @@
 {
     public static class Randomizer
     {
-        public static Randomizer<TItem> ToRandomized<TItem>(this IEnumerable<TItem> items)
+        public static IEnumerable<TItem> ToRandomized<TItem>(this IEnumerable<TItem> items)
         {
             return new Randomizer<TItem>(items);
         }
