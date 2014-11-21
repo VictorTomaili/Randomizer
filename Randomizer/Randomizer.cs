@@ -1,4 +1,6 @@
-﻿namespace System.Collections.Generic
+using System.Linq;
+
+namespace System.Collections.Generic
 {
     public class Randomizer<TItem> : IEnumerable<TItem>
     {
@@ -6,9 +8,9 @@
 
         public TItem[] Items { get; set; }
 
-        public Randomizer(IEnumerable items)
+        public Randomizer(IEnumerable<TItem> items)
         {
-            Items = items as TItem[];
+            Items = items.ToArray();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
